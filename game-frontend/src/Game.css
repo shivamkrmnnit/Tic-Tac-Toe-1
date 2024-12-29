@@ -1,0 +1,121 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Game container */
+  .game-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Board styling */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cell:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .cell:active {
+    background-color: #e0e0e0;
+  }
+  
+  .cell.O {
+    background-color: #f0f0f0;
+  }
+  
+  .cell.X {
+    background-color: #e0e0e0;
+  }
+  
+  /* Message styling */
+  .message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .message.win {
+    color: green;
+  }
+  
+  .message.draw {
+    color: gray;
+  }
+  
+  /* Player info */
+  .players-info {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .players-info p {
+    margin: 5px 0;
+  }
+  
