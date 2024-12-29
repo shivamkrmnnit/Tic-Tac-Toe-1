@@ -100,8 +100,10 @@ This project is open-source and available under the MIT License.
 
 # Screenshots
 Add screenshots of the game interface here, if needed.
-![Screenshot 2024-12-29 192328](https://github.com/user-attachments/assets/59703c6e-956b-4df6-ae00-144e980e3c90)
-![Screenshot 2024-12-29 192351](https://github.com/user-attachments/assets/08ea8a64-35b1-453f-b8b2-87a09036b49c)
+
+![Screenshot 2024-12-29 220610](https://github.com/user-attachments/assets/bcb4bccb-4234-4dc8-87a7-924fa5d8b50c)
+
+![Screenshot 2024-12-29 220631](https://github.com/user-attachments/assets/2837e34b-3e65-44c0-b095-14d686fdb6ba)
 
 # Troubleshooting
 
