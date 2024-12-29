@@ -1,34 +1,45 @@
-
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Home.css'; // Import the CSS file
 
 function Home() {
-  const [gameId, setGameId] = useState('');
-  const [playerName, setPlayerName] = useState('');
-  const navigate = useNavigate();
+  const [gameId, setGameId] = useState(''); // State for Game ID
+  const [playerName, setPlayerName] = useState(''); // State for Player Name
+  const navigate = useNavigate(); // Navigation function
 
-  const joinGame = () => {
-    if (gameId && playerName) {
-      // Redirect to the game page with the gameId as a URL parameter
-      navigate(`/game/${gameId}`, { state: { playerName } });
-    } else {
-      alert('Please enter both Game ID and Player Name.');
+  const handleJoinGame = () => {
+    if (!gameId.trim()) {
+      alert('Please enter a valid Game ID.');
+      return;
     }
+
+    if (!playerName.trim()) {
+      alert('Please enter your name.');
+      return;
+    }
+
+    navigate(`/game/${gameId}`, { state: { playerName } });
   };
 
   return (
     <div className="home-container">
-      <h1>Join a Game</h1>
-      <input
-        placeholder="Game ID"
-        value={gameId}
-        onChange={(e) => setGameId(e.target.value)}
-      />
-      <input
-        placeholder="Your Name"
-        value={playerName}
-        onChange={(e) => setPlayerName(e.target.value)}
-      />
-      <button onClick={joinGame}>Join Game</button>
+      <h1>Welcome to Tic-Tac-Toe</h1>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter Your Name"
+          value={playerName}
+          onChange={(e) => setPlayerName(e.target.value)}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Enter Game ID"
+          value={gameId}
+          onChange={(e) => setGameId(e.target.value)}
+        />
+      </div>
+      <button onClick={handleJoinGame}>Join Game</button>
     </div>
   );
 }
