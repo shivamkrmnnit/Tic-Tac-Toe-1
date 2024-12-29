@@ -4,6 +4,7 @@ import { io } from 'socket.io-client';
 import './Game.css';
 
 let socket;
+
 function Game() {
   const { gameId } = useParams();
   const { state } = useLocation();
@@ -20,7 +21,9 @@ function Game() {
     if (!playerName) {
       navigate('/'); // Redirect if playerName is not found (i.e., not joined)
     }
-    socket = io('http://localhost:5000');
+
+    // Replace with your backend URI
+    socket = io('https://tic-tac-toe-1-1.onrender.com');
 
     console.log('Joining game:', gameId, playerName);
 
