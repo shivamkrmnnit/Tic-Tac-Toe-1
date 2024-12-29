@@ -34,7 +34,7 @@ npm install express socket.io cors
 ```
 Start the server:
 ```
-node server.js
+npm start
 ```
 The server will run on http://localhost:5000.
 
