@@ -1,0 +1,66 @@
+/* General container styling */
+.home-container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .home-container h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input fields */
+  .home-container input {
+    padding: 12px;
+    width: 80%;
+    max-width: 350px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .home-container input:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  /* Button styling */
+  .home-container button {
+    padding: 12px 30px;
+    font-size: 18px;
+    background: linear-gradient(to right, #4caf50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .home-container button:hover {
+    background: linear-gradient(to right, #45a049, #4caf50);
+    transform: scale(1.05);
+  }
+  
+  .home-container button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 500px) {
+    .home-container input {
+      width: 90%;
+    }
+  
+    .home-container button {
+      width: 90%;
+      font-size: 16px;
+    }
+  }
+  
