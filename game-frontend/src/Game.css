@@ -1,121 +1,202 @@
 /* General styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #83a4d4, #b6fbff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Game container */
+.game-container {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  h1 {
-    text-align: center;
-    color: #333;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Game container */
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #4caf50, #45a049);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #45a049, #4caf50);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Board styling */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #f9f9f9;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+  background: #e0f7fa;
+  transform: scale(1.05);
+}
+
+.cell:active {
+  background: #b2ebf2;
+}
+
+.cell.O {
+  background: #ffebee;
+  color: #e57373;
+}
+
+.cell.X {
+  background: #e8f5e9;
+  color: #81c784;
+}
+
+/* Message styling */
+.message {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.message.win {
+  color: #4caf50;
+  animation: glow 1s infinite alternate;
+}
+
+.message.draw {
+  color: #757575;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(76, 175, 80, 1);
+  }
+}
+
+/* Player info */
+.players-info {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.players-info p {
+  margin: 5px 0;
+}
+
+/* Reset button styling */
+.reset-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #ff7043;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.reset-button:hover {
+  background: #f4511e;
+  transform: scale(1.05);
+}
+
+.reset-button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
   .game-container {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: center;
+    width: 90%;
   }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  /* Board styling */
+
   .board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 5px;
-    justify-content: center;
-    margin-top: 20px;
+    grid-template-columns: repeat(3, 80px);
+    gap: 8px;
   }
-  
+
   .cell {
-    width: 100px;
-    height: 100px;
-    border: 2px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: white;
-    transition: background-color 0.3s ease;
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
   }
-  
-  .cell:hover {
-    background-color: #f9f9f9;
-  }
-  
-  .cell:active {
-    background-color: #e0e0e0;
-  }
-  
-  .cell.O {
-    background-color: #f0f0f0;
-  }
-  
-  .cell.X {
-    background-color: #e0e0e0;
-  }
-  
-  /* Message styling */
-  .message {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .message.win {
-    color: green;
-  }
-  
-  .message.draw {
-    color: gray;
-  }
-  
-  /* Player info */
-  .players-info {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .players-info p {
-    margin: 5px 0;
-  }
-  
+}
